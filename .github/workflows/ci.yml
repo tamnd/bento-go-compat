@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+# Cancel an in-flight run when a branch is pushed again.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Regenerate every golden from the pinned bento release, check it against the
+  # committed one, then compile and run each golden and check what it prints. The
+  # compile-and-run is the whole point of this corpus, so unlike a fast unit suite
+  # this job runs the full test, not -short. It needs the network once to fetch the
+  # bento module and its frontend into the module cache; after that the standard
+  # library packages the cases reach load offline.
+  conformance:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          check-latest: true
+          cache: true
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -s -l .)
+          if [ -n "$unformatted" ]; then
+            echo "These files need gofmt -s -w:"
+            echo "$unformatted"
+            exit 1
+          fi
+      - name: go vet
+        run: go vet ./...
+      - name: build
+        run: go build ./...
+      - name: conformance
+        run: go test -count=1 ./...
+      - name: goldens are up to date
+        run: |
+          go test -run TestGoldensMatchLowering -update ./...
+          if ! git diff --quiet; then
+            echo "A golden is stale. Run 'go test -update' and commit the result:"
+            git diff --stat
+            exit 1
+          fi
