@@ -10,7 +10,7 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var counts *value.Map[value.BStr, float64] = bridge.Guard(func() *value.Map[value.BStr, float64] {
+	counts := bridge.Guard(func() *value.Map[value.BStr, float64] {
 		return bridge.MapFromGo(mapfixture.Counts(bridge.StringToGo(value.FromGoString("a b a c b a"))), value.NewStringMap[float64](), func(x string) value.BStr {
 			return bridge.StringFromGo(x)
 		}, func(x int) float64 {

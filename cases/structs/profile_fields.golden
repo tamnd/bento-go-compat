@@ -16,7 +16,7 @@ type ObjActiveAgeName struct {
 
 func main() {
 	defer value.ReportUncaught()
-	var u *ObjActiveAgeName = bridge.Guard(func() *ObjActiveAgeName {
+	u := bridge.Guard(func() *ObjActiveAgeName {
 		v := structfixture.MakeProfile(bridge.StringToGo(value.FromGoString("ada")), int(36), true)
 		return &ObjActiveAgeName{Name: bridge.StringFromGo(v.Name), Age: bridge.Int64ToNumber(int64(v.Age)), Active: v.Active}
 	})

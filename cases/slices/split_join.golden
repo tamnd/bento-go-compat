@@ -10,7 +10,7 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var parts *value.Array[value.BStr] = bridge.Guard(func() *value.Array[value.BStr] {
+	parts := bridge.Guard(func() *value.Array[value.BStr] {
 		return bridge.SliceFromGo(strings.Split(bridge.StringToGo(value.FromGoString("a,b,c")), bridge.StringToGo(value.FromGoString(","))), func(x string) value.BStr {
 			return bridge.StringFromGo(x)
 		})

@@ -10,7 +10,7 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var opt bridge.Opaque = bridge.Guard(func() bridge.Opaque {
+	opt := bridge.Guard(func() bridge.Opaque {
 		return bridge.OpaqueFromGo(optfixture.WithLevel(int(7)))
 	})
 	value.ConsoleLog(value.NumberToString(bridge.Guard(func() float64 {

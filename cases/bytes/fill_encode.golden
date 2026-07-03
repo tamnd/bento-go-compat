@@ -10,7 +10,7 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var b *value.Uint8Array = value.NewUint8Array(3)
+	b := value.NewUint8Array(3)
 	b.SetAt(0, 72)
 	b.SetAt(1, 105)
 	b.SetAt(2, 33)
