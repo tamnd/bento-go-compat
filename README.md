@@ -81,6 +81,7 @@ pinned bento.
 | `structs/point_box` | a Go struct result as an object box, its fields read back, then crossed back in as a struct argument and as a fresh object literal |
 | `structs/profile_fields` | a struct crossing carrying string, number, and boolean fields in both directions |
 | `callbacks/apply_fold` | a TypeScript function wrapped as a Go `func` value, called once, folded over a range, with mixed parameters, and as a void callback |
+| `callbacks/try_each` | a throwing callback wrapped as a Go `func` returning `error`, its throw hoisted to the func's error return and its clean run handed back as a nil error |
 
 ## What is not covered yet
 
@@ -91,7 +92,6 @@ proven, not a set of silent gaps.
 
 - a Go struct field written through the object box back to the Go value.
 - a callback that runs on another goroutine, marshaled back onto the event loop.
-- a callback whose `throw` becomes a Go `error` return.
 - a Go `int64` projected as `bigint` for the full 64-bit range.
 - `bigint`, the opt-in wide-integer crossing.
 
