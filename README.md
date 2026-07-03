@@ -82,6 +82,7 @@ pinned bento.
 | `structs/profile_fields` | a struct crossing carrying string, number, and boolean fields in both directions |
 | `callbacks/apply_fold` | a TypeScript function wrapped as a Go `func` value, called once, folded over a range, with mixed parameters, and as a void callback |
 | `callbacks/try_each` | a throwing callback wrapped as a Go `func` returning `error`, its throw hoisted to the func's error return and its clean run handed back as a nil error |
+| `callbacks/block_body` | a callback whose body is a statement block with a local and a conditional, lowered inside the Go `func` value, its inline throw becoming the func's error return |
 
 ## What is not covered yet
 
