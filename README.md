@@ -77,6 +77,9 @@ pinned bento.
 | `any/echo_name` | an `any` parameter and result, number, string, and bool kinds |
 | `bytes/hex_roundtrip` | a `Uint8Array` into `[]byte` and a `[]byte` back into a `Uint8Array`, with length and indexed reads |
 | `bytes/fill_encode` | a length-allocated `Uint8Array` written byte by byte, then crossed into `[]byte` |
+| `maps/word_counts` | a `map[string]int` result as a real bento `Map` with `.has` and `.size`, crossed back as a map argument |
+| `structs/point_box` | a Go struct result as an object box, its fields read back, then crossed back in as a struct argument and as a fresh object literal |
+| `structs/profile_fields` | a struct crossing carrying string, number, and boolean fields in both directions |
 
 ## What is not covered yet
 
@@ -85,8 +88,9 @@ starts to lower.
 The corpus grows with the compiler, so this list is the honest edge of what is
 proven, not a set of silent gaps.
 
-- `Map<K, V>`, a Go map crossed as a keyed collection.
-- a Go struct crossed as an object box, with field identity and write-through.
+- a Go struct field written through the object box back to the Go value.
+- a TypeScript callback wrapped as a Go `func` value.
+- a Go `int64` projected as `bigint` for the full 64-bit range.
 - a TypeScript callback passed in as a Go `func`.
 - `bigint`, the opt-in wide-integer crossing.
 
