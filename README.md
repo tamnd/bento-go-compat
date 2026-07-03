@@ -67,6 +67,7 @@ pinned bento.
 | `defined/param` | a defined-type parameter converted to its named Go type |
 | `slices/split_join` | `[]string` result and argument, element by element |
 | `slices/fields_length` | a slice result as a real bento array with `.length` |
+| `slices/struct_boxes` | a `[]struct` result as a bento array of read-only object boxes, indexed and read field by field over integer and mixed field kinds |
 | `variadic/path_join` | a variadic `...string` spread, including the zero-argument call |
 | `variadic/sprintf` | a fixed parameter ahead of a variadic `...any` tail |
 | `errors/atoi_throw` | a Go error hoisted to a catchable `Error` with its message |
@@ -91,6 +92,7 @@ starts to lower.
 The corpus grows with the compiler, so this list is the honest edge of what is
 proven, not a set of silent gaps.
 
+- a bento array of objects crossing into a Go `[]struct` argument, the inverse of the `slices/struct_boxes` result.
 - a Go struct field written through the object box back to the Go value.
 - a callback that runs on another goroutine, marshaled back onto the event loop.
 - a Go `int64` projected as `bigint` for the full 64-bit range.
