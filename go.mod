@@ -4,7 +4,7 @@ go 1.26.4
 
 replace github.com/microsoft/typescript-go => github.com/tamnd/typescript v0.0.0-20260701180118-497682f6991f
 
-require github.com/tamnd/bento v0.0.0-20260703103805-22d3d1ef2864
+require github.com/tamnd/bento v0.0.0-20260703105817-e3ac4bc9dd4c
 
 require (
 	github.com/evanw/esbuild v0.28.1 // indirect
