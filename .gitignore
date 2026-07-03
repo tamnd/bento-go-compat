@@ -1,0 +1,6 @@
+# Scratch directories the run test writes goldens into before compiling them.
+goldenrun-*/
+
+# Local build output.
+*.out.bin
+/bin/
