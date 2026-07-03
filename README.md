@@ -80,6 +80,7 @@ pinned bento.
 | `maps/word_counts` | a `map[string]int` result as a real bento `Map` with `.has` and `.size`, crossed back as a map argument |
 | `structs/point_box` | a Go struct result as an object box, its fields read back, then crossed back in as a struct argument and as a fresh object literal |
 | `structs/profile_fields` | a struct crossing carrying string, number, and boolean fields in both directions |
+| `callbacks/apply_fold` | a TypeScript function wrapped as a Go `func` value, called once, folded over a range, with mixed parameters, and as a void callback |
 
 ## What is not covered yet
 
@@ -89,9 +90,9 @@ The corpus grows with the compiler, so this list is the honest edge of what is
 proven, not a set of silent gaps.
 
 - a Go struct field written through the object box back to the Go value.
-- a TypeScript callback wrapped as a Go `func` value.
+- a callback that runs on another goroutine, marshaled back onto the event loop.
+- a callback whose `throw` becomes a Go `error` return.
 - a Go `int64` projected as `bigint` for the full 64-bit range.
-- a TypeScript callback passed in as a Go `func`.
 - `bigint`, the opt-in wide-integer crossing.
 
 ## Adding a case
