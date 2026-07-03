@@ -18,12 +18,8 @@ github.com/peter-evans/patience v0.3.0 h1:rX0JdJeepqdQl1Sk9c9uvorjYYzL2TfgLX1adq
 github.com/peter-evans/patience v0.3.0/go.mod h1:Kmxu5sY1NmBLFSStvXjX1wS9mIv7wMcP/ubucyMOAu0=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec h1:W09IVJc94icq4NjY3clb7Lk8O1qJ8BdBEF8z0ibU0rE=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec/go.mod h1:qqbHyh8v60DhA7CoWK5oRCqLrMHRGoxYCSS9EjAz6Eo=
-github.com/tamnd/bento v0.0.0-20260703094358-51be661d20cc h1:GSNF1jtHfbt/qZgXp7J3TbRX3VlKc+hom3uUaUp21Qg=
-github.com/tamnd/bento v0.0.0-20260703094358-51be661d20cc/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
-github.com/tamnd/bento v0.0.0-20260703103805-22d3d1ef2864 h1:ruGEePgS3oBBltM2As3/5TH9855GtxlJylp2RKVP9+I=
-github.com/tamnd/bento v0.0.0-20260703103805-22d3d1ef2864/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
-github.com/tamnd/bento v0.0.0-20260703105817-e3ac4bc9dd4c h1:J2F9uw0J93oXA7Ldd9PuC/ILwEAiMk82j9BJnkinnlE=
-github.com/tamnd/bento v0.0.0-20260703105817-e3ac4bc9dd4c/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
+github.com/tamnd/bento v0.0.0-20260703111822-ad198af7a637 h1:5j9a6UqZVGVayKCjVFy8Oh0ev00TaYzCugxw67KotvQ=
+github.com/tamnd/bento v0.0.0-20260703111822-ad198af7a637/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
 github.com/tamnd/typescript v0.0.0-20260701180118-497682f6991f h1:4Zq6RxlYUefSgh5/hjnvoCR5/GP7MOb6yBQobCWNXtY=
 github.com/tamnd/typescript v0.0.0-20260701180118-497682f6991f/go.mod h1:gV4G6M8xxLNqQSRHiFOgKHlY+5YJgYPM6QwFLWllC+8=
 github.com/zeebo/assert v1.3.0 h1:g7C04CbJuIDKNPFHmsk4hwZDO5O+kntRxzaUoNXj+IQ=
