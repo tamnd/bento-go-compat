@@ -24,6 +24,8 @@ github.com/tamnd/bento v0.0.0-20260703072947-030f7d515636 h1:BVsS7ZTgA72CwDai2ly
 github.com/tamnd/bento v0.0.0-20260703072947-030f7d515636/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
 github.com/tamnd/bento v0.0.0-20260703075859-50f17d2d43e0 h1:X40FawL/gzBalkuFHrADt8m8DX4CNjtAiikHHesV1cc=
 github.com/tamnd/bento v0.0.0-20260703075859-50f17d2d43e0/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
+github.com/tamnd/bento v0.0.0-20260703082828-6c93d9e7d69c h1:8Fh7g0l8lhoyxKgzwcqbtT/pWbwp6utCO5SAhAxLU4s=
+github.com/tamnd/bento v0.0.0-20260703082828-6c93d9e7d69c/go.mod h1:XpLrxklfafFk244Y2JFOasH4iYPytrWM7lhtMsqbafg=
 github.com/tamnd/typescript v0.0.0-20260701180118-497682f6991f h1:4Zq6RxlYUefSgh5/hjnvoCR5/GP7MOb6yBQobCWNXtY=
 github.com/tamnd/typescript v0.0.0-20260701180118-497682f6991f/go.mod h1:gV4G6M8xxLNqQSRHiFOgKHlY+5YJgYPM6QwFLWllC+8=
 github.com/zeebo/assert v1.3.0 h1:g7C04CbJuIDKNPFHmsk4hwZDO5O+kntRxzaUoNXj+IQ=
