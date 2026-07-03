@@ -1,0 +1,2 @@
+42
+caught: strconv.Atoi: parsing "nope": invalid syntax
