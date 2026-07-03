@@ -75,6 +75,8 @@ pinned bento.
 | `namespace/two_packages` | the `import * as` namespace form over two packages |
 | `opaque/level_roundtrip` | a non-projected Go type carried through as an opaque token |
 | `any/echo_name` | an `any` parameter and result, number, string, and bool kinds |
+| `bytes/hex_roundtrip` | a `Uint8Array` into `[]byte` and a `[]byte` back into a `Uint8Array`, with length and indexed reads |
+| `bytes/fill_encode` | a length-allocated `Uint8Array` written byte by byte, then crossed into `[]byte` |
 
 ## What is not covered yet
 
@@ -83,9 +85,6 @@ starts to lower.
 The corpus grows with the compiler, so this list is the honest edge of what is
 proven, not a set of silent gaps.
 
-- `Uint8Array` and `[]byte`, the whole-buffer byte crossing. The classifier that
-  recognizes `[]byte` as this crossing is in; the construction, indexing, and
-  marshaling that make it run end to end are in progress.
 - `Map<K, V>`, a Go map crossed as a keyed collection.
 - a Go struct crossed as an object box, with field identity and write-through.
 - a TypeScript callback passed in as a Go `func`.
