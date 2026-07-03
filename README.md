@@ -81,6 +81,7 @@ pinned bento.
 | `bytes/fill_encode` | a length-allocated `Uint8Array` written byte by byte, then crossed into `[]byte` |
 | `maps/word_counts` | a `map[string]int` result as a real bento `Map` with `.has` and `.size`, crossed back as a map argument |
 | `structs/point_box` | a Go struct result as an object box, its fields read back, then crossed back in as a struct argument and as a fresh object literal |
+| `structs/point_ptr` | a Go `*struct` result read through the same object box as a value struct, then a `*struct` argument from a boxed result and from a fresh object literal |
 | `structs/profile_fields` | a struct crossing carrying string, number, and boolean fields in both directions |
 | `callbacks/apply_fold` | a TypeScript function wrapped as a Go `func` value, called once, folded over a range, with mixed parameters, and as a void callback |
 | `callbacks/try_each` | a throwing callback wrapped as a Go `func` returning `error`, its throw hoisted to the func's error return and its clean run handed back as a nil error |
