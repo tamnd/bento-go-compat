@@ -20,7 +20,7 @@ type ObjActiveAgeName struct {
 
 func main() {
 	defer value.ReportUncaught()
-	var pts *value.Array[*ObjXY] = bridge.Guard(func() *value.Array[*ObjXY] {
+	pts := bridge.Guard(func() *value.Array[*ObjXY] {
 		return bridge.SliceFromGo(structfixture.Diagonal(int(3)), func(v structfixture.Point) *ObjXY {
 			return &ObjXY{X: bridge.Int64ToNumber(int64(v.X)), Y: bridge.Int64ToNumber(int64(v.Y))}
 		})
@@ -28,7 +28,7 @@ func main() {
 	value.ConsoleLog(value.NumberToString(pts.Len()))
 	value.ConsoleLog(value.NumberToString(pts.At(0).X + pts.At(0).Y))
 	value.ConsoleLog(value.NumberToString(pts.At(2).X + pts.At(2).Y))
-	var rows *value.Array[*ObjActiveAgeName] = bridge.Guard(func() *value.Array[*ObjActiveAgeName] {
+	rows := bridge.Guard(func() *value.Array[*ObjActiveAgeName] {
 		return bridge.SliceFromGo(structfixture.Profiles(), func(v structfixture.Profile) *ObjActiveAgeName {
 			return &ObjActiveAgeName{Name: bridge.StringFromGo(v.Name), Age: bridge.Int64ToNumber(int64(v.Age)), Active: v.Active}
 		})

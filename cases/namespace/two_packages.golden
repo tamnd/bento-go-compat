@@ -11,7 +11,7 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var shout value.BStr = bridge.Guard(func() value.BStr {
+	shout := bridge.Guard(func() value.BStr {
 		return bridge.StringFromGo(strings.ToUpper(bridge.StringToGo(value.FromGoString("hello"))))
 	})
 	value.ConsoleLog(shout)

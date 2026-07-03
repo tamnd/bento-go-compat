@@ -10,10 +10,10 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var shout value.BStr = bridge.Guard(func() value.BStr {
+	shout := bridge.Guard(func() value.BStr {
 		return bridge.StringFromGo(strings.ToUpper(bridge.StringToGo(value.FromGoString("hello"))))
 	})
-	var ok bool = bridge.Guard(func() bool {
+	ok := bridge.Guard(func() bool {
 		return strings.HasPrefix(bridge.StringToGo(shout), bridge.StringToGo(value.FromGoString("HE")))
 	})
 	value.ConsoleLog(shout)

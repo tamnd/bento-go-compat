@@ -15,7 +15,7 @@ type ObjXY struct {
 
 func main() {
 	defer value.ReportUncaught()
-	var p *ObjXY = bridge.Guard(func() *ObjXY {
+	p := bridge.Guard(func() *ObjXY {
 		v := structfixture.MakePoint(int(3), int(4))
 		return &ObjXY{X: bridge.Int64ToNumber(int64(v.X)), Y: bridge.Int64ToNumber(int64(v.Y))}
 	})

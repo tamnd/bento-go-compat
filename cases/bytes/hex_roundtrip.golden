@@ -10,11 +10,11 @@ import (
 
 func main() {
 	defer value.ReportUncaught()
-	var buf *value.Uint8Array = value.Uint8ArrayOf(65, 66, 67)
+	buf := value.Uint8ArrayOf(65, 66, 67)
 	value.ConsoleLog(bridge.Guard(func() value.BStr {
 		return bridge.StringFromGo(hex.EncodeToString(bridge.BytesToGo(buf)))
 	}))
-	var back *value.Uint8Array = bridge.Guard(func() *value.Uint8Array {
+	back := bridge.Guard(func() *value.Uint8Array {
 		return bridge.BytesFromGo(bridge.Must(hex.DecodeString(bridge.StringToGo(value.FromGoString("48656c6c6f")))))
 	})
 	value.ConsoleLog(value.NumberToString(back.Len()))

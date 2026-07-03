@@ -24,7 +24,7 @@ func main() {
 			return bridge.Int64ToNumber(int64(bridge.Must(funcfixture.TryEach(int(5), func(p0 int) error {
 				return bridge.CallbackError(func() {
 					func(i float64) {
-						var doubled float64 = i * 2
+						doubled := i * 2
 						if doubled >= 4 {
 							value.Throw(value.NewError(value.Concat(value.FromGoString("too far at "), value.NumberToString(i))))
 						}
@@ -37,7 +37,7 @@ func main() {
 		return bridge.Int64ToNumber(int64(bridge.Must(funcfixture.TryEach(int(2), func(p0 int) error {
 			return bridge.CallbackError(func() {
 				func(i float64) {
-					var doubled float64 = i * 2
+					doubled := i * 2
 					if doubled >= 4 {
 						value.Throw(value.NewError(value.Concat(value.FromGoString("too far at "), value.NumberToString(i))))
 					}
